@@ -70,7 +70,7 @@ export default function Carousel() {
           <span className="sr-only">Previous</span>
         </button>
         <button
-          className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-white text-black p-2 rounded-full "
+          className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-white text-black p-2 rounded-full"
           type="button"
           onClick={next}
         >
