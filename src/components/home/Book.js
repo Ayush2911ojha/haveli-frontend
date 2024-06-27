@@ -24,7 +24,7 @@ export default function Book() {
                 </div>
                 <div>
                   <select className="form-select block w-full py-3 px-4 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary">
-                    <option selected>Adult</option>
+                    <option selected>Adults</option>
                     <option value="1">Adult 1</option>
                     <option value="2">Adult 2</option>
                     <option value="3">Adult 3</option>

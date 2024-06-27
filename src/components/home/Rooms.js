@@ -1,13 +1,15 @@
 import React from "react";
 
 import { facility, roomItems } from "../data/Data";
+import { Link } from "react-router-dom";
 
 export default function Rooms() {
   return (
     <>
       <div className="container mx-auto py-20">
         <div className="text-center mb-12">
-         
+        <h2 className="text-3xl font-bold text-center mt-8 mb-4">Our Hotels</h2>
+
         </div>
         <div className="flex flex-wrap -mx-4">
           {roomItems.map((item, key) => (
@@ -40,9 +42,9 @@ export default function Rooms() {
                     >
                       {item.yellowbtn}
                     </a>
-                    <a className="btn btn-sm bg-gray-800 text-white rounded py-2 px-4" href="">
+                    <Link className="btn btn-sm bg-gray-800 text-white rounded py-2 px-4" to={'/form'}>
                       {item.darkbtn}
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>

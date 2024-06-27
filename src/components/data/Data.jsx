@@ -22,33 +22,12 @@ export const navList = [
     },
     {
       id: 4,
-      path: "/rooms",
-      text: "Rooms",
+      path: "/hotelsList",
+      text: "Browse hotels",
     },
+    
     {
       id: 5,
-      path: "/page",
-      text: "Page",
-      subItems: [
-        {
-          id: 51,
-          path: "/booking",
-          text: "Booking",
-        },
-        {
-          id: 52,
-          path: "/team",
-          text: "Our Team",
-        },
-        {
-          id: 53,
-          path: "/testimonial",
-          text: "Testimonial",
-        },
-      ],
-    },
-    {
-      id: 6,
       path: "/contact",
       text: "Contact",
     },
@@ -284,7 +263,7 @@ export const services = [
   export const roomItems = [
     {
       img: "../assets/img/room-1.jpg",
-      price: "$110/night",
+      price: "110/night",
       name: "Junior Suit",
       star: [
         <small class="fa fa-star text-primary"></small>,
@@ -301,7 +280,7 @@ export const services = [
   
     {
       img: "../assets/img/room-2.jpg",
-      price: "$110/night",
+      price: "110/night",
       name: "Executive Suite",
       star: [
         <small class="fa fa-star text-primary"></small>,
@@ -317,7 +296,7 @@ export const services = [
     },
     {
       img: "../assets/img/room-3.jpg",
-      price: "$110/night",
+      price: "110/night",
       name: "Super Deluxe",
       star: [
         <small class="fa fa-star text-primary"></small>,
