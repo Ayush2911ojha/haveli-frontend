@@ -74,6 +74,13 @@ export const socialIcons = [
       btn1: "Our Room",
       btn2: "Book Room",
     },
+      {
+      img: "../assets/img/room-2.jpg",
+      title: "Discover A Brand Luxurious Hotel",
+      subtitle: "luxury living",
+      btn1: "Our Room",
+      btn2: "Book Room",
+    },
   ];
   export const about = [
     {
@@ -310,6 +317,7 @@ export const services = [
       yellowbtn: "View Detail",
       darkbtn: "book now",
     },
+    
   ];
   
   export const facility = [

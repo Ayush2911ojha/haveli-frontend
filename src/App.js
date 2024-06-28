@@ -8,6 +8,8 @@ import Services from './components/home/Service'
 import HotelBookingForm from './pages/HotelBookingForm'
 import HotelList from './features/browseHotels/HotelList'
 import Layout from './Layout'
+import { SearchContextProvider } from './Context/SearchContext'
+import SearchResult from './pages/SearchResult'
 
 const router = createBrowserRouter([
   {
@@ -45,6 +47,10 @@ const router = createBrowserRouter([
       {
         path: '/hotelsList',
         element: <HotelList />
+      },
+       {
+        path: '/search',
+        element: <SearchResult/>
       }
     ]
   }
@@ -52,9 +58,11 @@ const router = createBrowserRouter([
 
 function App () {
   return (
-    <div className='App'>
-      <RouterProvider router={router} />
-    </div>
+    <SearchContextProvider>
+      <div className='App'>
+        <RouterProvider router={router} />
+      </div>
+    </SearchContextProvider>
   )
 }
 

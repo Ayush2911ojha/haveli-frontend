@@ -1,53 +1,111 @@
-import React from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { useSearchContext } from "../../Context/SearchContext";
+import { MdTravelExplore } from "react-icons/md";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 export default function Book() {
+   const navigate = useNavigate();
+   const search = useSearchContext();
+
+  const [destination, setDestination] = useState(search.destination);
+  const [checkIn, setCheckIn] = useState(search.checkIn);
+  const [checkOut, setCheckOut] = useState(search.checkOut);
+  const [adultCount, setAdultCount] = useState(search.adultCount);
+  const [childCount, setChildCount] = useState(search.childCount);
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    search.saveSearchValues(
+      destination,
+      checkIn,
+      checkOut,
+      adultCount,
+      childCount
+    );
+    navigate("/search");
+  };
+
+  const minDate = new Date();
+  const maxDate = new Date();
+  maxDate.setFullYear(maxDate.getFullYear() + 1);
+
   return (
     <>
-      <div className="container-fluid bg-gray-100 pb-12">
-        <div className="container mx-auto">
-          <div className="bg-white shadow-lg p-8">
-            <div className="grid grid-cols-1 md:grid-cols-11 gap-4">
-              <div className="col-span-1 md:col-span-9 grid grid-cols-1 md:grid-cols-4 gap-4">
-                <div>
-                  <input
-                    type="text"
-                    className="form-control block w-full py-3 px-4 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary"
-                    placeholder="Check in"
-                  />
-                </div>
-                <div>
-                  <input
-                    type="text"
-                    className="form-control block w-full py-3 px-4 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary"
-                    placeholder="Check out"
-                  />
-                </div>
-                <div>
-                  <select className="form-select block w-full py-3 px-4 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary">
-                    <option selected>Adults</option>
-                    <option value="1">Adult 1</option>
-                    <option value="2">Adult 2</option>
-                    <option value="3">Adult 3</option>
-                  </select>
-                </div>
-                <div>
-                  <select className="form-select block w-full py-3 px-4 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary">
-                    <option selected>Child</option>
-                    <option value="1">Child 1</option>
-                    <option value="2">Child 2</option>
-                    <option value="3">Child 3</option>
-                  </select>
-                </div>
-              </div>
-              <div className="col-span-1 md:col-span-2">
-                <button className="btn btn-primary w-full py-3 px-4 bg-primary text-white rounded hover:bg-primary-dark transition">
-                  Submit
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
+  <form name="SearchForm"
+      onSubmit={handleSubmit}
+      className="-mt-0 p-7 bg-blue-400 rounded shadow-md grid grid-cols-2 lg:grid-cols-3 2xl:grid-cols-5 items-center gap-4"
+    >
+      {/* <div className="flex flex-row items-center flex-1 bg-white p-2">
+        <MdTravelExplore size={25} className="mr-2" />
+        <input
+          placeholder="Where are you going?"
+          className="text-md w-full focus:outline-none"
+          value={destination}
+          onChange={(event) => setDestination(event.target.value)}
+        />
+      </div> */}
+
+      <div className="flex bg-white px-2 py-1 gap-2">
+        <label className="items-center flex">
+          Adults:
+          <input
+            className="w-full p-1 focus:outline-none font-bold"
+            type="number"
+            min={1}
+            max={20}
+            value={adultCount}
+            onChange={(event) => setAdultCount(parseInt(event.target.value))}
+          />
+        </label>
+        <label className="items-center flex">
+          Children:
+          <input
+            className="w-full p-1 focus:outline-none font-bold"
+            type="number"
+            min={0}
+            max={20}
+            value={childCount}
+            onChange={(event) => setChildCount(parseInt(event.target.value))}
+          />
+        </label>
       </div>
-    </>
+      <div>
+        <DatePicker
+          selected={checkIn}
+          onChange={(date) => setCheckIn(date)}
+          selectsStart
+          startDate={checkIn}
+          endDate={checkOut}
+          minDate={minDate}
+          maxDate={maxDate}
+          placeholderText="Check-in Date"
+          className="min-w-full bg-white p-2 focus:outline-none"
+          wrapperClassName="min-w-full"
+        />
+      </div>
+      <div>
+        <DatePicker
+          selected={checkOut}
+          onChange={(date) => setCheckOut(date)}
+          selectsStart
+          startDate={checkIn}
+          endDate={checkOut}
+          minDate={minDate}
+          maxDate={maxDate}
+          placeholderText="Check-out Date"
+          className="min-w-full bg-white p-2 focus:outline-none"
+          wrapperClassName="min-w-full"
+        />
+      </div>
+      <div className="flex gap-1">
+        <button type="submit" className="w-2/3 bg-blue-600 text-white h-full p-2 font-bold text-xl hover:bg-blue-500 rounded-md shadow-md">
+          Search
+        </button>
+         
+      </div>
+      </form>
+      </>
   );
 }
