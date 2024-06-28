@@ -35,7 +35,7 @@ export default function Book() {
     <>
   <form name="SearchForm"
       onSubmit={handleSubmit}
-      className="-mt-0 p-7 bg-blue-400 rounded shadow-md grid grid-cols-2 lg:grid-cols-3 2xl:grid-cols-5 items-center gap-4"
+      className="-mt-0 p-7 bg-blue-100 border border-gray-300 rounded shadow-2xl grid grid-cols-2 lg:grid-cols-3 2xl:grid-cols-5 items-center gap-4"
     >
       {/* <div className="flex flex-row items-center flex-1 bg-white p-2">
         <MdTravelExplore size={25} className="mr-2" />
@@ -100,7 +100,7 @@ export default function Book() {
         />
       </div>
       <div className="flex gap-1">
-        <button type="submit" className="w-2/3 bg-blue-600 text-white h-full p-2 font-bold text-xl hover:bg-blue-500 rounded-md shadow-md">
+        <button type="submit" className="w-2/3 bg-yellow-300 text-white h-full p-2 font-bold text-xl hover:bg-yellow-500  transition duration-300 rounded-md shadow-md">
           Search
         </button>
          

@@ -1,8 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import AllHotels from './AllHotels';
-import { facility } from '../../components/data/Data';
-
-
 
 const HotelList = () => {
   const [hotels, setHotels] = useState([]);
@@ -12,7 +9,6 @@ const HotelList = () => {
       try {
         const response = await fetch('http://localhost:8080/hotels');
         const data = await response.json();
-        console.log(data);
         setHotels(data);
       } catch (error) {
         console.error('Error fetching hotels:', error);
@@ -23,10 +19,12 @@ const HotelList = () => {
   }, []);
 
   return (
-    <div className="p-4">
-      <h1 className="text-2xl font-bold mb-4">Hotel List</h1>
-      <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 ">
-        {hotels.map(hotel => (
+    <div className="container mx-auto px-4 py-8">
+      <h1 className="text-4xl font-bold text-center mb-6 text-blue-800">
+        Explore Our Hotels
+      </h1>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
+        {hotels.map((hotel) => (
           <AllHotels
             key={hotel.id}
             hotelDetails={{
@@ -39,7 +37,7 @@ const HotelList = () => {
             }}
           />
         ))}
-      </ul>
+      </div>
     </div>
   );
 };

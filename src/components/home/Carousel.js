@@ -3,6 +3,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { carouselData } from "../data/Data";
+import { Link } from "react-router-dom";
 
 export default function Carousel() {
   const sliderRef = useRef(null);
@@ -48,18 +49,18 @@ export default function Carousel() {
                     {val.title}
                   </h1>
                   <div className="flex space-x-3">
-                    <a
-                      href="#"
+                    <Link
+                      to="/hotelsList"
                       className="btn btn-primary py-3 px-5 animate__animated animate__slideInLeft"
                     >
                       {val.btn1}
-                    </a>
-                    <a
-                      href="#"
+                    </Link>
+                    <Link
+                      to="/hotelsList"
                       className="btn btn-light py-3 px-5 animate__animated animate__slideInRight"
                     >
                       {val.btn2}
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>

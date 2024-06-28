@@ -68,14 +68,14 @@ export const socialIcons = [
       btn2: "Book Room",
     },
       {
-      img: "../assets/img/carousel-2.jpg",
+      img: "https://images.pexels.com/photos/2133508/pexels-photo-2133508.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       title: "Discover A Brand Luxurious Hotel",
       subtitle: "luxury living",
       btn1: "Our Room",
       btn2: "Book Room",
     },
       {
-      img: "../assets/img/room-2.jpg",
+      img: "https://images.pexels.com/photos/258154/pexels-photo-258154.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       title: "Discover A Brand Luxurious Hotel",
       subtitle: "luxury living",
       btn1: "Our Room",

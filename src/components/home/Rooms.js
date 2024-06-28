@@ -42,7 +42,7 @@ export default function Rooms() {
                     >
                       {item.yellowbtn}
                     </a>
-                    <Link className="btn btn-sm bg-gray-800 text-white rounded py-2 px-4" to={'/form'}>
+                    <Link className="bg-yellow-500 hover:bg-yellow-600 text-white font-bold capitalize py-2 px-4 rounded-lg shadow-md transition duration-300" to={'/form'}>
                       {item.darkbtn}
                     </Link>
                   </div>
