@@ -205,11 +205,11 @@ export const services = [
   export const footerContact = [
     {
       icon: <i className="fa fa-map-marker-alt me-3"></i>,
-      name: "123 Street, New York, USA",
+      name: "123 street SharpCareer",
     },
     {
       icon: <i className="fa fa-phone-alt me-3"></i>,
-      name: "+012 345 67890",
+      name: "+91 89 78 787 787",
     },
     {
       icon: <i className="fa fa-envelope me-3"></i>,

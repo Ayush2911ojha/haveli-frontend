@@ -6,8 +6,8 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
 export default function Book() {
-   const navigate = useNavigate();
-   const search = useSearchContext();
+  const navigate = useNavigate();
+  const search = useSearchContext();
 
   const [destination, setDestination] = useState(search.destination);
   const [checkIn, setCheckIn] = useState(search.checkIn);
@@ -32,80 +32,66 @@ export default function Book() {
   maxDate.setFullYear(maxDate.getFullYear() + 1);
 
   return (
-    <>
-  <form name="SearchForm"
+    <form
       onSubmit={handleSubmit}
-      className="-mt-0 p-7 bg-blue-100 border border-gray-300 rounded shadow-2xl grid grid-cols-2 lg:grid-cols-3 2xl:grid-cols-5 items-center gap-4"
+      className="p-8 bg-gradient-to-r from-blue-300 to-blue-500 border border-gray-300 rounded-lg shadow-2xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 items-center"
     >
-      {/* <div className="flex flex-row items-center flex-1 bg-white p-2">
-        <MdTravelExplore size={25} className="mr-2" />
-        <input
-          placeholder="Where are you going?"
-          className="text-md w-full focus:outline-none"
-          value={destination}
-          onChange={(event) => setDestination(event.target.value)}
-        />
-      </div> */}
-
-      <div className="flex bg-white px-2 py-1 gap-2">
-        <label className="items-center flex">
+    
+       
+       
+    
+      <div className="flex bg-white p-3 rounded-lg shadow-md transform hover:scale-105 transition duration-300">
+        <label className="flex items-center mr-4">
           Adults:
           <input
-            className="w-full p-1 focus:outline-none font-bold"
             type="number"
             min={1}
             max={20}
             value={adultCount}
             onChange={(event) => setAdultCount(parseInt(event.target.value))}
+            className="ml-2 w-12 p-1 text-center focus:outline-none"
           />
         </label>
-        <label className="items-center flex">
+        <label className="flex items-center">
           Children:
           <input
-            className="w-full p-1 focus:outline-none font-bold"
             type="number"
             min={0}
             max={20}
             value={childCount}
             onChange={(event) => setChildCount(parseInt(event.target.value))}
+            className="ml-2 w-12 p-1 text-center focus:outline-none"
           />
         </label>
       </div>
-      <div>
-        <DatePicker
-          selected={checkIn}
-          onChange={(date) => setCheckIn(date)}
-          selectsStart
-          startDate={checkIn}
-          endDate={checkOut}
-          minDate={minDate}
-          maxDate={maxDate}
-          placeholderText="Check-in Date"
-          className="min-w-full bg-white p-2 focus:outline-none"
-          wrapperClassName="min-w-full"
-        />
-      </div>
-      <div>
-        <DatePicker
-          selected={checkOut}
-          onChange={(date) => setCheckOut(date)}
-          selectsStart
-          startDate={checkIn}
-          endDate={checkOut}
-          minDate={minDate}
-          maxDate={maxDate}
-          placeholderText="Check-out Date"
-          className="min-w-full bg-white p-2 focus:outline-none"
-          wrapperClassName="min-w-full"
-        />
-      </div>
-      <div className="flex gap-1">
-        <button type="submit" className="w-2/3 bg-yellow-300 text-white h-full p-2 font-bold text-xl hover:bg-yellow-500  transition duration-300 rounded-md shadow-md">
-          Search
-        </button>
-         
-      </div>
-      </form>
-      </>
+      <DatePicker
+        selected={checkIn}
+        onChange={(date) => setCheckIn(date)}
+        selectsStart
+        startDate={checkIn}
+        endDate={checkOut}
+        minDate={minDate}
+        maxDate={maxDate}
+        placeholderText="Check-in Date"
+        className="w-full bg-white p-3 rounded-lg shadow-md transform hover:scale-105 transition duration-300 focus:outline-none"
+      />
+      <DatePicker
+        selected={checkOut}
+        onChange={(date) => setCheckOut(date)}
+        selectsEnd
+        startDate={checkIn}
+        endDate={checkOut}
+        minDate={minDate}
+        maxDate={maxDate}
+        placeholderText="Check-out Date"
+        className="w-full bg-white p-3 rounded-lg shadow-md transform hover:scale-105 transition duration-300 focus:outline-none"
+      />
+      <button
+        type="submit"
+        className="bg-yellow-500 text-white font-bold p-3 rounded-lg shadow-md transform hover:scale-105 hover:bg-yellow-600 transition duration-300"
+      >
+        Search
+      </button>
+    </form>
   );
 }

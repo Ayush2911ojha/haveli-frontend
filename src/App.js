@@ -59,7 +59,7 @@ const router = createBrowserRouter([
 function App () {
   return (
     <SearchContextProvider>
-      <div className='App'>
+      <div className='App overflow-hidden'>
         <RouterProvider router={router} />
       </div>
     </SearchContextProvider>
