@@ -11,6 +11,8 @@ import Layout from './Layout'
 import { SearchContextProvider } from './Context/SearchContext'
 import SearchResult from './pages/SearchResult'
 
+import ContactPage from './pages/ContactPage'
+
 const router = createBrowserRouter([
   {
     path: '/',
@@ -51,6 +53,11 @@ const router = createBrowserRouter([
        {
         path: '/search',
         element: <SearchResult/>
+      },
+        
+          {
+        path: '/contact',
+        element: <ContactPage/>
       }
     ]
   }

@@ -5,6 +5,7 @@ import About from '../components/home/About';
 import Rooms from '../components/home/Rooms';
 import Services from '../components/home/Service';
 
+
 const Home = () => {
  
     return (
@@ -14,8 +15,9 @@ const Home = () => {
         <About />
         <Rooms/>
         <Services />
-        {/* // <Sliders />
-        // <Teams /> */}
+       
+       
+       
       </>
     );
   
