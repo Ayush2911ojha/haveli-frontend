@@ -8,7 +8,7 @@ export default function Contact() {
     <>
     
 
-      <div className="bg-blue-50 py-12">
+      <div className="bg-blue-50 mt-10 py-12">
         <div className="container mx-auto px-6">
           <CommonHeading
             heading="Contact Us"

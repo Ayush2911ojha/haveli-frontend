@@ -1,7 +1,7 @@
 import React from 'react'
 import { useForm } from "react-hook-form";
 import { Link } from 'react-router-dom';
-import { createUser } from '../authApi';
+
 
 const Login = () => {
     
@@ -12,7 +12,7 @@ const Login = () => {
   } = useForm();
 
     return (
-        <>
+        <div className='loginPage'>
          {/* {user && <Navigate to='/' replace={true}></Navigate>} */}
           <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
             <div className="sm:mx-auto sm:w-full sm:max-w-sm">
@@ -22,21 +22,12 @@ const Login = () => {
                 alt="Your Company"
               />
               <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
-                Log in to your account
+             Login account
               </h2>
             </div>
     
             <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-              <form noValidate className="space-y-6" onSubmit={handleSubmit((data)=>{
-                // dispatch(
-                //   loginUserAsync({email:data.email,password:data.password})
-                //   )
-                createUser({ email:data.email, password:data.password });
-                //  console.log({email:data.email,password:data.password})
-                
-              })} 
-              
-              >
+              <form noValidate className="space-y-6" >
                 <div>
                   <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
                     Email address
@@ -75,15 +66,15 @@ const Login = () => {
                   </div>
                   {/* {error && (<p className='text-red-500'>{error.message}</p>)} */}
                 </div>
-    
-                <div>
+                <div className="mt-2"></div>
+                <Link to='/'>
                   <button
                     type="submit"
                     className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                   >
                     Log in
                   </button>
-                </div>
+                </Link>
               </form>
     
               <p className="mt-10 text-center text-sm text-gray-500">
@@ -94,7 +85,7 @@ const Login = () => {
               </p>
             </div>
           </div>
-        </>
+        </div>
       );
 }
 

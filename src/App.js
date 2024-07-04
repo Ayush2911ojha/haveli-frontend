@@ -12,8 +12,16 @@ import { SearchContextProvider } from './Context/SearchContext'
 import SearchResult from './pages/SearchResult'
 
 import ContactPage from './pages/ContactPage'
+import Login from './features/auth/components/Login'
+import SignUp from './features/auth/components/SignUp'
 
 const router = createBrowserRouter([
+  {
+    path: '/login',
+element:<Login/>    
+  }, {
+  path: '/signup',
+element:<SignUp/> },
   {
     path: '/',
     element: <Layout />,
@@ -34,10 +42,7 @@ const router = createBrowserRouter([
         path: '/booking',
         element: <BookingPage />
       },
-      {
-        path: '/login',
-        element: <LoginPage />
-      },
+     
       {
         path: '/services',
         element: <Services />
