@@ -6,7 +6,7 @@ import CommonHeading from "../common/commonHeading";
 export default function Services() {
   return (
     <>
-      <div className="container mx-auto py-20">
+      <div className="container mx-auto mt-24 py-20">
       <div className="text-center text-black font-extrabold animate-pulse">
       <CommonHeading
         heading="Our Services"

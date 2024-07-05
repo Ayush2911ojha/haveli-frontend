@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const AllHotels = ({ hotelDetails }) => {
   const { id, name, details, img, price, facility } = hotelDetails;
@@ -59,9 +60,9 @@ const AllHotels = ({ hotelDetails }) => {
             <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-blue-600">${price}</h2>
             <span className="text-sm sm:text-base text-gray-500 ml-1 sm:ml-2">/night</span>
           </div>
-          <button className="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-lg shadow-md transition duration-300">
+       <Link  to={'/form'}>  <button  className="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-lg shadow-md transition duration-300">
             Book Now
-          </button>
+          </button> </Link>
         </div>
       </div>
     </li>
