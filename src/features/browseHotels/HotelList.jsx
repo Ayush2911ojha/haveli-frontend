@@ -7,8 +7,9 @@ const HotelList = () => {
   useEffect(() => {
     const fetchHotels = async () => {
       try {
-        const response = await fetch('http://localhost:8080/hotels');
+        const response = await fetch('http://localhost:8080/api/hotels');
         const data = await response.json();
+        console.log("data->>>",data);
         setHotels(data);
       } catch (error) {
         console.error('Error fetching hotels:', error);
